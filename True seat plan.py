@@ -10,6 +10,7 @@ e=int(input("First roll:"))
 f=int(input("Last roll:"))
 r=int(input("Row no:"))
 col=int(input("Column no:"))
+x=1
     
 d=[]
 def arrange(a,b,s,z,k):
@@ -18,7 +19,7 @@ def arrange(a,b,s,z,k):
     s=a in b
     if(s!=True):
         b.append(a)
-        print(a,end='   ')
+        
         
     else:
         
@@ -33,10 +34,13 @@ for i in range(r):
         z=c in d
         if (z!=True):
             
-            print(c,end='   ')
+            print(x,"th roll:",c,end='     ')
             d.append(c)
+            x=x+1
         else:
             arrange(c,d,z,e,f)
+            print(x,"th roll:",c,end='     ')
+            x=x+1
             
             
       
