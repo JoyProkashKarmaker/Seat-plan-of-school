@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun May 28 04:05:45 2023
-
-@author: USER
-"""
-
 import random
 e=int(input("First roll:"))
 f=int(input("Last roll:"))
@@ -32,18 +25,44 @@ for i in range(r):
     for j in range(col):
         c=random.randint(e, f)
         z=c in d
+        if(x==f+1):
+            break
         if (z!=True):
+            if(x==1):
+                print(x,"st roll:",c,end='     ')
+                d.append(c)
+                x=x+1
+            elif (x==2):
+                print(x,"nd roll:",c,end='     ')
+                d.append(c)
+                x=x+1
+            elif (x==3):
+                print(x,"rd roll:",c,end='     ')
+                d.append(c)
+                x=x+1
             
-            print(x,"th roll:",c,end='     ')
-            d.append(c)
-            x=x+1
+            else:
+                print(x,"th roll:",c,end='     ')
+                d.append(c)
+                x=x+1
+            
+                
+                
         else:
             arrange(c,d,z,e,f)
-            print(x,"th roll:",c,end='     ')
-            x=x+1
+            if(x==1):
+                print(x,"st roll:",c,end='     ')
+                x=x+1
+            elif (x==2):
+                print(x,"nd roll:",c,end='     ')
+                x=x+1
+            elif (x==3):
+                print(x,"rd roll:",c,end='     ')
+                x=x+1
+            else:
+                print(x,"th roll:",c,end='     ')
+                x=x+1
             
             
       
     print()
-
-        
